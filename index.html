@@ -1,0 +1,62 @@
+# College Bus Route Management System
+
+buses = {
+    "Bus 101": {
+        "route": "Chennai - College",
+        "stops": "Tambaram, Vandalur, Guduvanchery",
+        "time": "7:30 AM"
+    },
+    "Bus 102": {
+        "route": "Avadi - College",
+        "stops": "Avadi, Ambattur, Anna Nagar",
+        "time": "7:15 AM"
+    },
+    "Bus 103": {
+        "route": "Chengalpattu - College",
+        "stops": "Chengalpattu, Singaperumal Koil, Maraimalai Nagar",
+        "time": "7:00 AM"
+    }
+}
+
+while True:
+
+    print("\n===== COLLEGE BUS MANAGEMENT =====")
+    print("1. View Bus Routes")
+    print("2. Search Bus")
+    print("3. Exit")
+
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+
+        for bus, details in buses.items():
+
+            print("\nBus:", bus)
+            print("Route:", details["route"])
+            print("Stops:", details["stops"])
+            print("Time:", details["time"])
+
+    elif choice == "2":
+
+        bus = input("Enter bus number: ")
+
+        if bus in buses:
+
+            details = buses[bus]
+
+            print("\nBus:", bus)
+            print("Route:", details["route"])
+            print("Stops:", details["stops"])
+            print("Time:", details["time"])
+
+        else:
+            print("Bus not found!")
+
+    elif choice == "3":
+
+        print("Thank you!")
+        break
+
+    else:
+
+        print("Invalid choice!")
